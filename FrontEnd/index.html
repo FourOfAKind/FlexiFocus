@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>FlexiFocus</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="top-navbar">
+            <a href="index.html"><label class="logo">FlexiFocus<i><i class="fa-solid fa-hourglass"></i></i></label></a>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li class="stats-btn"><a href="#">Your Stats</a></li>
+                <li><a href="#"><button class="sign-in-btn">Sign In</button></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="body">
+        <div class="timer">
+            <nav class="timer-navbar">
+                <ul class="nav-links timer-links"> 
+                    <li class="stopwatch-btn"><a href="#">Stopwatch</a></li>
+                    <li class="pomodoro-btn"><a href="#">Pomodoro</a></li>
+                </ul>
+            </nav>
+
+            <div class="unselected">
+                <h1 class="unselected-warning">N/A</h1>
+                <h2>No timer selected! Select an option above. </h2>
+            </div>
+
+            <div class="pomodoro">
+                <h1 class="pomodoro-display">25:00</h1>
+                <h2 class="pomodoro-mode">Current Mode: Pomodoro (Work)</h2>
+                <ul class="nav-links timer-btns">
+                    <li><button class="pomodoro-start-stop-btn">Start</button></li>
+                    <li><button class="pomodoro-reset-btn">Reset</button></li>
+                    <li><button class=pomodoro-skip-btn>Skip</button></li>
+                </ul>
+                <script src="pomodoro.js"></script>
+            </div>
+
+            <div class="stopwatch">
+                <h1 class="stopwatch-display">00:00:00</h1>
+                <h2 class="stopwatch-mode">Current Mode: Stopwatch</h2>
+                <ul class="nav-links timer-btns">
+                    <li><button class="stopwatch-start-stop-btn">Start</button></li>
+                    <li><button class="stopwatch-reset-btn">Reset</button></li>
+                </ul>
+                <script src="stopwatch.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="navlistener.js"></script>
+</body>
+</html>
