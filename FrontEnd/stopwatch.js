@@ -51,5 +51,3 @@ sResetButton.addEventListener("click", () => {
     sStartStopButton.innerHTML = "Start";
     sStartStop = 0;
 });
-
-//hello

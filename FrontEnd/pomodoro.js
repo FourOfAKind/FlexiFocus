@@ -29,7 +29,7 @@ function decrementTimer() {
     }
 }
 
-function checkMode(currentMode) {
+function checkMode() {
     clearInterval(timer);
     if (currentMode === 1) {
         pMinutes = 5;
