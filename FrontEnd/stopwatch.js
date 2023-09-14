@@ -3,10 +3,6 @@ const sStartStopButton = document.querySelector(".stopwatch-start-stop-btn");
 let sStartStop = 0;
 const sResetButton = document.querySelector(".stopwatch-reset-btn");
 
-const sElementToChange = document.querySelector('body');
-const sActiveColor = getComputedStyle(document.documentElement).getPropertyValue('--active');
-const sInactiveColor = getComputedStyle(document.documentElement).getPropertyValue('--inactive');
-
 function incrementTimer() {
     sSeconds++;
     if (sSeconds >= 60) {
@@ -31,20 +27,20 @@ sStartStopButton.addEventListener("click", () => {
     if (sStartStop === 1) {
         timer = setInterval(incrementTimer, 1000);
         sStartStopButton.innerHTML = "Pause";
-        sElementToChange.style.backgroundColor = sActiveColor;
+         bgColor.style.backgroundColor = activeColor;
     }
     else {
         clearInterval(timer);
         sStartStopButton.innerHTML = "Start";
         sStartStop = 0;
-        sElementToChange.style.backgroundColor = sInactiveColor;
+        bgColor.style.backgroundColor = inactiveColor;
         document.title = `Paused Stopwatch`;
     }
 });
 
 sResetButton.addEventListener("click", () => {
     clearInterval(timer);
-    sElementToChange.style.backgroundColor = sInactiveColor;
+    bgColor.style.backgroundColor = inactiveColor;
     [sSeconds, sMinutes, sHours] = [0, 0, 0];
     document.querySelector(".stopwatch-display").innerHTML = "00:00:00";
     document.title = `FlexiFocus`;
