@@ -27,6 +27,7 @@
         <div class="timer">
             <nav class="timer-navbar">
                 <ul class="nav-links timer-links"> 
+                    <li class="original-btn"><a href="#">FlexiFocus</a></li>
                     <li class="stopwatch-btn"><a href="#">Stopwatch</a></li>
                     <li class="pomodoro-btn"><a href="#">Pomodoro</a></li>
                 </ul>
@@ -37,13 +38,23 @@
                 <h2>No timer selected! Select an option above. </h2>
             </div>
 
+            <div class="original">
+                <h1 class="original-display">00:00:00</h1>
+                <h2 class="original-mode">Current Mode: FlexiFocus Original</h2>
+                <ul class="nav-links timer-btns">
+                    <li><button class="original-start-stop-btn">Start</button></li>
+                    <li><button class="original-reset-btn">Reset</button></li>
+                    <li><button class="original-skip-btn">Skip</button></li>
+                </ul>
+            </div>
+
             <div class="pomodoro">
                 <h1 class="pomodoro-display">25:00</h1>
                 <h2 class="pomodoro-mode">Current Mode: Pomodoro</h2>
                 <ul class="nav-links timer-btns">
                     <li><button class="pomodoro-start-stop-btn">Start</button></li>
                     <li><button class="pomodoro-reset-btn">Reset</button></li>
-                    <li><button class=pomodoro-skip-btn>Skip</button></li>
+                    <li><button class="pomodoro-skip-btn">Skip</button></li>
                 </ul>
                 <script src="pomodoro.js"></script>
             </div>
