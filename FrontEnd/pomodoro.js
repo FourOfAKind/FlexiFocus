@@ -53,7 +53,7 @@ function checkMode() {
     }
 }
 
-function checkTimerState(startStopValue) {
+function checkTimerState() {
     if (pStartStop === 1) {
         timer = setInterval(decrementTimer, 1000);
         pStartStopButton.innerHTML = "Pause";

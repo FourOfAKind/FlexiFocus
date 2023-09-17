@@ -8,6 +8,7 @@ const adaptiveDiv = document.querySelector('.adaptive');
 const bgColor = document.querySelector('body');
 const activeColor = getComputedStyle(document.documentElement).getPropertyValue('--active');
 const inactiveColor = getComputedStyle(document.documentElement).getPropertyValue('--inactive');
+let timerMode;
 
 function hideModes(remainingDiv) {
   try {
@@ -25,12 +26,18 @@ function hideModes(remainingDiv) {
 
 pomodoroButton.addEventListener('click', function() {
   hideModes(pomodoroDiv);
+  initialiseTimer("pomodoro");
+  timerMode = "pomodoro";
 });
 
 stopwatchButton.addEventListener('click', function() {
   hideModes(stopwatchDiv);
+  initialiseTimer("stopwatch");
+  timerMode = "stopwatch";
 });
 
 adaptiveButton.addEventListener('click', function() {
   hideModes(adaptiveDiv);
+  initialiseTimer("adaptive");
+  timerMode = "adaptive";
 });
