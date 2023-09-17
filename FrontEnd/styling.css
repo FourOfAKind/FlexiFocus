@@ -113,7 +113,7 @@ a:hover, .logo:hover{
     color: var(--secondary);
 }
 
-.unselected, .stopwatch, .pomodoro, .original {
+.unselected, .stopwatch, .pomodoro, .adaptive {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,14 +124,14 @@ a:hover, .logo:hover{
     background: rgba(0, 0, 0, 0.1);
 }
 
-.stopwatch, .pomodoro, .original {
+.stopwatch, .pomodoro, .adaptive {
     display: none;
 }
 
-.unselected h1, .stopwatch h1, .pomodoro h1, .original h1 {
+.unselected h1, .stopwatch h1, .pomodoro h1, .adaptive h1 {
     font-size: 5rem;
 } 
 
-.stopwatch *, .pomodoro *, .original *, .unselected * {
+.stopwatch *, .pomodoro *, .adaptive *, .unselected * {
     padding: 2%;
 }
