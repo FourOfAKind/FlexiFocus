@@ -62,12 +62,49 @@ function decrementTimer() {
     }
 }
 
+function checkBreak(workHours, workMinutes, workSeconds) {
+    let totalWorkTimeInSeconds = (workHours * 3600) + (workMinutes * 60) + workSeconds;
+    let breakTimeInSeconds = Math.floor(totalWorkTimeInSeconds / 5);
+    let breakHours = Math.floor(breakTimeInSeconds / 3600);
+    let breakMinutes = Math.floor((breakTimeInSeconds % 3600) / 60);
+    let breakSeconds = breakTimeInSeconds % 60;
+    return [breakHours, breakMinutes, breakSeconds];
+}
+
 function checkMode() {
     try {
         clearInterval(timer);
     } catch (error) {
         console.log("Timer not started yet");
     }
-    bgColor.style.backgroundColor = inactiveColor;
-}
 
+    if (timer === "pomodoro") {
+        if (currentMode === 1) {
+            minutes = 5;
+            seconds = 0;
+            mode = "Short Break";
+            document.querySelector(".pomodoro-display").innerHTML = `05:00`;
+            document.querySelector('.pomodoro-mode').innerHTML = `Current Mode: ${mode}`;
+        } else {
+            currentMode = 0;
+            pMinutes = 25;
+            pSeconds = 0;
+            mode = "Pomodoro";
+            document.querySelector(".pomodoro-display").innerHTML = `25:00`;
+            document.querySelector('.pomodoro-mode').innerHTML = `Current Mode: ${mode}`;
+        }        
+    }
+    if (timer === "adaptive") {
+        if (currentMode === 1) {
+            [hours, minutes, seconds] = checkBreak(hours, minutes, seconds);
+            mode = "Break";
+            document.querySelector(".adaptive-display").innerHTML = [hours, minutes, seconds].join(":");
+            document.querySelector('.adaptive-mode').innerHTML = `Current Mode: ${mode}`;
+        } else {
+            currentMode = 0;
+            mode = "Work";
+            document.querySelector(".adaptive-display").innerHTML = [hours, minutes, seconds].join(":");
+            document.querySelector('.adaptive-mode').innerHTML = `Current Mode: ${mode}`;
+        }
+    }
+}
